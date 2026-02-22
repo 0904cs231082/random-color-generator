@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description"
+    content="Premium Random Color Generator with HEX, RGB, HSL, Gradient, History, Export and Download features">
+    <meta name="Keywords"
+    content="Color Generator, HSL RGB HEX, Gradient Tool, JavaScript Project.">
+    <meta name="author" content="Prateet Dhakad">
+
+    <title>Premium Random Color Generator</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Random Colour Generator</h1>
+   
+    <header>
+        <h1 class="animated-heading">Random Color Generator</h1>
+        <p>HEX • RGB • HSL • Gradient • History</p>
+    </header>
+
+    <main>
+
+<section class="glass-card">
+
+<div id="colorBox"></div>
+
+<div class="code-row">
+<h2 id="colorCode">#FFFFFF</h2>
+<button id="copyBtn">Copy</button>
+</div>
+
+<div class="btn-group">
+<button id="generateBtn">Generate</button>
+<button id="gradientBtn">Gradient</button>
+<button id="autoBtn">Auto</button>
+<button id="formatBtn">Switch Format</button>
+<button id="themeToggle">Theme</button>
+</div>
+
+<input type="text" id="customInput" placeholder="Enter HEX (#ff0000)">
+<button id="applyCustom">Apply</button>
+
+<div class="extra-btns">
+<button id="exportPalette">Export Palette</button>
+<button id="downloadImage">Download Image</button>
+</div>
+
+</section>
+
+<section class="history-section">
+<h3>Color History</h3>
+<div id="historyList"></div>
+</section>
+
+</main>
+
+
+<footer>
+    <p>© 2026 Prateet Dhakad | Production Ready Version</p>
+</footer>
 </body>
 </html>
