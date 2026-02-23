@@ -1,63 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-    content="Premium Random Color Generator with HEX, RGB, HSL, Gradient, History, Export and Download features">
-    <meta name="Keywords"
-    content="Color Generator, HSL RGB HEX, Gradient Tool, JavaScript Project.">
-    <meta name="author" content="Prateet Dhakad">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Premium Random Color Generator</title>
-    <link rel="stylesheet" href="/css/styles.css">
+<title>Premium Random Color Generator</title>
+
+<meta name="description" content="Premium Random Color Generator with HEX, RGB, HSL, Gradient and History.">
+<meta name="author" content="Prateet Dhakad">
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:,">
 </head>
+
 <body>
-   
-    <header>
-        <h1 class="animated-heading">Random Color Generator</h1>
-        <p>HEX • RGB • HSL • Gradient • History</p>
-    </header>
 
-    <main>
+<div class="bg-shapes"></div>
 
-<section class="glass-card">
+<header>
+  <h1 class="animated-heading">Random Color Generator</h1>
+  <p>HEX • Gradient • History</p>
+</header>
 
-<div id="colorBox"></div>
+<main>
+  <section class="glass-card">
 
-<div class="code-row">
-<h2 id="colorCode">#FFFFFF</h2>
-<button id="copyBtn">Copy</button>
-</div>
+    <div id="colorBox"></div>
 
-<div class="btn-group">
-<button id="generateBtn">Generate</button>
-<button id="gradientBtn">Gradient</button>
-<button id="autoBtn">Auto</button>
-<button id="formatBtn">Switch Format</button>
-<button id="themeToggle">Theme</button>
-</div>
+    <div class="code-row">
+      <h2 id="colorCode">#FFFFFF</h2>
+      <button id="copyBtn">Copy</button>
+    </div>
 
-<input type="text" id="customInput" placeholder="Enter HEX (#ff0000)">
-<button id="applyCustom">Apply</button>
+    <div class="btn-group">
+      <button id="generateBtn">Generate</button>
+      <button id="gradientBtn">Gradient</button>
+      <button id="autoBtn">Auto</button>
+      <button id="themeToggle">Theme</button>
+    </div>
 
-<div class="extra-btns">
-<button id="exportPalette">Export Palette</button>
-<button id="downloadImage">Download Image</button>
-</div>
+    <input type="text" id="customInput" placeholder="Enter HEX (#ff0000)">
+    <button id="applyCustom">Apply</button>
 
-</section>
+    <div class="extra-btns">
+      <button id="exportPalette">Export Palette</button>
+      <button id="downloadImage">Download Image</button>
+    </div>
 
-<section class="history-section">
-<h3>Color History</h3>
-<div id="historyList"></div>
-</section>
+  </section>
 
+  <section class="history-section">
+    <h3>Color History</h3>
+    <div id="historyList"></div>
+  </section>
 </main>
 
-
-<footer>
-    <p>© 2026 Prateet Dhakad | Production Ready Version</p>
+<footer class="history-section">
+  © 2026 Prateet Dhakad | Production Ready
 </footer>
+
+<script src="js/script.js" defer></script>
 </body>
 </html>

@@ -1,35 +1,231 @@
 :root{
-    --bg:#0f172a;
-    --text:#fff;
-    --glass:rgba(255, 255, 255, 0.8);
-    --primary:linear-gradient(45deg, #6366f1, #ec4899);
+  --bg:#0f172a;
+  --text:#ffffff;
+  --card:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.15);
+  --shadow:0 20px 40px rgba(0,0,0,0.4);
 }
+
 body.light{
-    --bg:#f1f5f9;
-    --text:#111;
-    --glass:rgba(255, 255, 255, 0.6);
+  --bg:#f1f5f9;
+  --text:#111;
+  --card:rgba(255,255,255,0.7);
+  --border:rgba(0,0,0,0.1);
+  --shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-    transition: 0.3s;
+  font-family:Segoe UI, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  transition:0.4s;
+  overflow-x:hidden;
+  position:relative;
 }
 
-/* header */
+/* Floating Shapes */
+
+.bg-shapes::before,
+.bg-shapes::after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:0.5;
+  z-index:-1;
+  animation:float 8s infinite alternate ease-in-out;
+}
+
+.bg-shapes::before{
+  background:#6366f1;
+  top:-80px;
+  left:-80px;
+}
+
+.bg-shapes::after{
+  background:#ec4899;
+  bottom:-100px;
+  right:-100px;
+}
+
+@keyframes float{
+  to{transform:translateY(40px);}
+}
+
+/* Header */
+
+header{
+  text-align:center;
+  padding:40px 20px;
+}
+
 .animated-heading{
-    font-size: 2rem;
-    text-align: center;
-    background: linear-gradient(90deg,  #6366f1, #ec4899, #14b8a6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size:2.2rem;
+  background:linear-gradient(90deg,#6366f1,#ec4899,#14b8a6);
+  background-size:300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove{
+  100%{background-position:300%;}
+}
+
+/* Glass Card */
+
+.glass-card{
+  background:var(--card);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:30px;
+  max-width:500px;
+  margin:auto;
+  box-shadow:var(--shadow);
+}
+
+/* Color Box */
+
+#colorBox{
+  height:180px;
+  border-radius:15px;
+  margin-bottom:20px;
+  transition:0.4s;
+}
+
+/* Code Row */
+
+.code-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+/* Buttons */
+
+button{
+  padding:8px 14px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:0.85rem;
+  background:linear-gradient(135deg,#6366f1,#ec4899);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  transition:0.2s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+}
+
+/* Ripple */
+
+.ripple{
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,0.6);
+  transform:scale(0);
+  animation:ripple 600ms linear;
+  pointer-events:none;
+}
+
+@keyframes ripple{
+  to{
+    transform:scale(4);
+    opacity:0;
+  }
+}
+
+.btn-group,.extra-btns{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  margin:10px 0;
+}
+
+/* Input */
+
+
+
+#customInput{
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text);
+  margin-top:10px;
+}
+
+/* History */
+
+.history-section{
+  text-align:center;
+  margin-top:30px;
+}
+
+#historyList{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  margin-top:10px;
+}
+
+.history-item{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  cursor:pointer;
+  border:2px solid #fff;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Cursor Trail */
+
+.cursor-dot{
+  position:fixed;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:linear-gradient(45deg,#6366f1,#ec4899);
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  animation:fadeOut 0.6s linear forwards;
+  z-index:9999;
+}
+
+@keyframes fadeOut{
+  to{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(2);
+  }
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+  .glass-card{padding:20px;}
+  #colorBox{height:150px;}
+  .code-row{flex-direction:column;gap:10px;}
 }
